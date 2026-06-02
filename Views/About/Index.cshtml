@@ -1,0 +1,140 @@
+@{
+    ViewBag.Title = "About Us";
+    ViewBag.ActivePage = "About";
+}
+
+<div class="section-inner">
+    <p class="section-tag">Who We Are</p>
+
+    <div class="about-grid">
+
+        <!-- LEFT: Text -->
+        <div>
+            <h2 class="section-title">A Legacy of<br />Security Excellence</h2>
+
+            <div class="about-text">
+                <p>
+                    Star Securities was established in 2000 as an investigation firm and has since evolved
+                    into a full-spectrum "Total Security Solutions Provider." With over two decades of operations,
+                    we have built an unmatched reputation for reliability, innovation and commitment to quality.
+                </p>
+                <p>
+                    Today, Star serves over 250 corporate customers across 24 states, backed by a trained
+                    workforce of over 2,800 personnel, supervisors, and 100 bonded senior managers.
+                </p>
+                <p>
+                    Our services span Manned Guarding (MG), Investigations (C&amp;I),
+                    Electronic Security Systems (ESS), and Cash Services (CS) &mdash;
+                    making us a one-stop destination for all security needs.
+                </p>
+
+                <div class="cert-badge">
+                    &#x1F3C6; &nbsp; ISO 9001:2000 Certified Public Limited Company
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="about-stats-grid">
+                <div class="about-stat-box">
+                    <div class="num">2000</div>
+                    <div class="lbl">Year Founded</div>
+                </div>
+                <div class="about-stat-box">
+                    <div class="num">4</div>
+                    <div class="lbl">Service Divisions</div>
+                </div>
+                <div class="about-stat-box">
+                    <div class="num">250+</div>
+                    <div class="lbl">Corporate Clients</div>
+                </div>
+                <div class="about-stat-box">
+                    <div class="num">24</div>
+                    <div class="lbl">States Covered</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Image + Chairman Card -->
+        <div>
+            <div class="about-img-box">
+                &#x1F3E2;
+            </div>
+
+            <div class="chairman-card">
+                <h3>Chairman's Message</h3>
+                <blockquote>
+                    "Our mission is to relieve our clients of all vexations and bothers pertaining to
+                    their safety and security. We will continue to innovate and uphold the highest
+                    standards of service delivery."
+                </blockquote>
+                <div class="name">Mr. Ramesh Kumar</div>
+                <div class="role">Chairman &amp; Managing Director</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ===== BOARD OF DIRECTORS ===== -->
+<div class="section-alt">
+    <div class="section-inner">
+        <p class="section-tag">Leadership</p>
+        <h2 class="section-title">Board of Directors</h2>
+
+        <div class="feature-grid">
+            <div class="feature-box">
+                <div class="f-icon">&#x1F454;</div>
+                <h3>Mr. Ramesh Kumar</h3>
+                <p>Chairman &amp; Managing Director<br />
+                   <span style="color:var(--muted); font-size:13px;">25+ years in security industry. Former IPS officer.</span>
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="f-icon">&#x1F454;</div>
+                <h3>Mrs. Sunita Agarwal</h3>
+                <p>Executive Director – Operations<br />
+                   <span style="color:var(--muted); font-size:13px;">Expert in large-scale manpower management and logistics.</span>
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="f-icon">&#x1F454;</div>
+                <h3>Mr. Vikram Rao</h3>
+                <p>Director – Technology &amp; Systems<br />
+                   <span style="color:var(--muted); font-size:13px;">Led the ESS division from inception. B.Tech, IIT Delhi.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== HISTORY TIMELINE ===== -->
+<div class="section-inner">
+    <p class="section-tag">Our Journey</p>
+    <h2 class="section-title">History</h2>
+
+    <div style="max-width:700px;">
+        @foreach (var item in new[] {
+            new { Year="2000", Text="Star Securities founded as a private investigation firm in New Delhi." },
+            new { Year="2003", Text="Launched Manned Guarding (MG) division. First 500 guards deployed." },
+            new { Year="2006", Text="Entered Cash Services segment with armored vans and ATM replenishment." },
+            new { Year="2009", Text="Electronic Security Systems (ESS) division established. ISO 9001:2000 certification obtained." },
+            new { Year="2013", Text="Expanded to 24 states. Crossed 250 corporate clients milestone." },
+            new { Year="2018", Text="Launched state-of-the-art Training Academy for security personnel." },
+            new { Year="2025", Text="2800+ personnel. Continuing to innovate and grow across India." }
+        })
+        {
+            <div style="display:flex; gap:24px; margin-bottom:28px; align-items:flex-start;">
+                <div style="min-width:60px; font-family:'Playfair Display',serif; font-size:18px; color:var(--gold); padding-top:2px;">
+                    @item.Year
+                </div>
+                <div style="flex:1; border-left:1px solid var(--border); padding-left:24px; color:var(--muted); font-size:15px; line-height:1.7;">
+                    @item.Text
+                </div>
+            </div>
+        }
+    </div>
+</div>

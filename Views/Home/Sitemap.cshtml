@@ -1,0 +1,47 @@
+@{
+    ViewBag.Title = "Site Map";
+    ViewBag.ActivePage = "Home";
+}
+
+<div class="section-inner">
+    <p class="section-tag">Navigation</p>
+    <h2 class="section-title" style="text-align:center;">
+        A complete overview of all pages on the Star Securities website.
+    </h2>
+
+    <div class="sitemap-grid">
+
+        <div class="sitemap-section">
+            <h3>About Us</h3>
+            <a href="@Url.Action("Index", "About")">History</a>
+            <a href="@Url.Action("Index", "About")">Chairman's Profile</a>
+            <a href="@Url.Action("Index", "About")">Board of Directors</a>
+        </div>
+
+        <div class="sitemap-section">
+            <h3>Our Business</h3>
+            <a href="@Url.Action("Index", "Services")">Manned Guarding</a>
+            <a href="@Url.Action("Index", "Services")">Cash Services</a>
+            <a href="@Url.Action("Index", "Services")">Electronic Security</a>
+            <a href="@Url.Action("Index", "Services")">Recruitment &amp; Training</a>
+        </div>
+
+        <div class="sitemap-section">
+            <h3>Our Network</h3>
+            <a href="@Url.Action("Index", "Network")">North Region</a>
+            <a href="@Url.Action("Index", "Network")">South Region</a>
+            <a href="@Url.Action("Index", "Network")">East Region</a>
+            <a href="@Url.Action("Index", "Network")">West Region</a>
+        </div>
+
+        <div class="sitemap-section">
+            <h3>More</h3>
+            <a href="@Url.Action("Index", "Clients")">Clients</a>
+            <a href="@Url.Action("Index", "Careers")">Careers</a>
+            <a href="@Url.Action("Index", "Home")#testimonials">Testimonials</a>
+            <a href="@Url.Action("Index", "Contact")">Contact Us</a>
+            <a href="@Url.Action("Login", "Account")">Employee Login</a>
+        </div>
+
+    </div>
+</div>

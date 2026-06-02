@@ -1,0 +1,79 @@
+@{
+    ViewBag.Title = "Apply for " + ViewBag.JobTitle;
+    ViewBag.ActivePage = "Careers";
+    string jobTitle = ViewBag.JobTitle ?? "Position";
+}
+
+<div class="section-inner" style="max-width:700px;">
+    <p class="section-tag">Careers</p>
+    <h2 class="section-title">Apply: @jobTitle</h2>
+    <p class="section-sub" style="margin-bottom:32px;">
+        Fill in the form below. Our HR team will contact you within 3 working days.
+    </p>
+
+    <div class="contact-form-box">
+        @using (Html.BeginForm("ApplySubmit", "Careers", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="JobTitle" value="@jobTitle" />
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="FirstName" placeholder="Ramesh" />
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="LastName" placeholder="Kumar" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="Email" placeholder="you@email.com" />
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" name="Phone" placeholder="+91 98XXXXXXXX" />
+            </div>
+
+            <div class="form-group">
+                <label>Current City</label>
+                <input type="text" name="City" placeholder="Delhi" />
+            </div>
+
+            <div class="form-group">
+                <label>Qualification</label>
+                <select name="Qualification">
+                    <option value="">-- Select --</option>
+                    <option>10th Pass</option>
+                    <option>12th Pass</option>
+                    <option>ITI / Diploma</option>
+                    <option>Graduate</option>
+                    <option>Post Graduate</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Years of Experience</label>
+                <input type="number" name="Experience" placeholder="e.g. 3" min="0" max="40" />
+            </div>
+
+            <div class="form-group">
+                <label>Cover Letter / Note</label>
+                <textarea name="CoverLetter" placeholder="Tell us why you're a good fit..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold" style="width:100%;">
+                Submit Application
+            </button>
+        }
+    </div>
+
+    <div style="margin-top:20px; text-align:center;">
+        <a href="@Url.Action("Index", "Careers")" style="color:var(--muted); font-size:13px; text-decoration:none;">
+            &larr; Back to All Openings
+        </a>
+    </div>
+</div>

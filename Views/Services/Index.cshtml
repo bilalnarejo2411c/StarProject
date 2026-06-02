@@ -1,0 +1,107 @@
+@{
+    ViewBag.Title = "Our Services";
+    ViewBag.ActivePage = "Services";
+}
+
+<div class="section-inner">
+    <p class="section-tag">What We Do</p>
+    <h2 class="section-title">Our Business Divisions</h2>
+    <p class="section-sub">Comprehensive security solutions tailored to industrial, commercial and business needs.</p>
+
+    <!-- Manned Guarding -->
+    <div class="service-detail-card">
+        <div class="svc-icon-lg">&#x1F6E1;</div>
+        <div>
+            <h3>Manned Guarding</h3>
+            <p>
+                Our manned guarding division provides comprehensive security personnel services including
+                professional guards, fire squads, dog squads, and bodyguards. We serve a wide range of
+                industries including banks, retail outlets, residential colonies, hotels, and institutions.
+                All personnel undergo rigorous training and are deployed with strict operational protocols.
+            </p>
+            <div class="badge-row">
+                <span class="star-badge">Industrial</span>
+                <span class="star-badge">Banks</span>
+                <span class="star-badge">Retail</span>
+                <span class="star-badge">Hotels</span>
+                <span class="star-badge">Residential</span>
+                <span class="star-badge">Institutions</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cash Services -->
+    <div class="service-detail-card">
+        <div class="svc-icon-lg">&#x1F4B0;</div>
+        <div>
+            <h3>Cash Services</h3>
+            <p>
+                Our Cash Services division handles the secure movement and management of currency and valuables.
+                Services include secured cash transfer, ATM replenishment, vaulting, processing services,
+                multi-point cash collection, and caretaker services — all executed with zero-compromise
+                security protocols.
+            </p>
+            <div class="badge-row">
+                <span class="star-badge">ATM Services</span>
+                <span class="star-badge">Vaulting</span>
+                <span class="star-badge">Cash Transfer</span>
+                <span class="star-badge">Processing</span>
+                <span class="star-badge">Multi-point Collection</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Electronic Security Systems -->
+    <div class="service-detail-card">
+        <div class="svc-icon-lg">&#x1F4F9;</div>
+        <div>
+            <h3>Electronic Security Systems</h3>
+            <p>
+                Working with reputed system integrators and installers, our ESS division designs, installs
+                and maintains cutting-edge security systems. Our portfolio covers access control systems,
+                CCTV surveillance, fire alarm and suppression systems, intruder/burglar alarms, and
+                perimeter protection systems.
+            </p>
+            <div class="badge-row">
+                <span class="star-badge">CCTV</span>
+                <span class="star-badge">Access Control</span>
+                <span class="star-badge">Fire Alarm</span>
+                <span class="star-badge">Burglar Alarm</span>
+                <span class="star-badge">Perimeter Protection</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recruitment & Training -->
+    <div class="service-detail-card">
+        <div class="svc-icon-lg">&#x1F465;</div>
+        <div>
+            <h3>Recruitment &amp; Training</h3>
+            <p>
+                This division works in close alignment with all other Star divisions to recruit, train
+                and deploy qualified security personnel. We ensure the right manpower reaches the right
+                assignment — maintaining the high standards that our clients expect from Star.
+            </p>
+            <div class="badge-row">
+                <span class="star-badge">Recruitment</span>
+                <span class="star-badge">Training</span>
+                <span class="star-badge">Deployment</span>
+                <span class="star-badge">Assessment</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ===== CTA ===== -->
+<div class="section-alt">
+    <div class="section-inner" style="text-align:center; padding:60px 40px;">
+        <p class="section-tag" style="text-align:center;">Get Started</p>
+        <h2 class="section-title" style="margin:0 auto 16px;">Need a Security Solution?</h2>
+        <p style="color:var(--muted); max-width:480px; margin:0 auto 32px; font-size:16px; line-height:1.7;">
+            Our team is available 24/7 to assess your security requirements and propose a customized plan.
+        </p>
+        <a href="@Url.Action("Index", "Contact")" class="btn-gold">Contact Us Today</a>
+    </div>
+</div>

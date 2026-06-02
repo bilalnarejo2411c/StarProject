@@ -1,0 +1,54 @@
+@{
+    ViewBag.Title = "Clients";
+    ViewBag.ActivePage = "Clients";
+}
+
+<div class="section-inner">
+    <p class="section-tag">Who Trusts Us</p>
+    <h2 class="section-title">Our Clients</h2>
+    <p class="section-sub">Over 250 corporates rely on Star Securities across diverse industries.</p>
+
+    <div class="clients-table-wrap">
+        <table class="clients-table">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Industry</th>
+                    <th>Services Availed</th>
+                    <th>Staff Assigned</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in new[] {
+                    new { Name="IndusInd Bank Ltd",   Industry="Banking",        Services="Manned Guarding, Cash Services",     Staff="48" },
+                    new { Name="Reliance Retail Ltd", Industry="Retail",         Services="Manned Guarding, CCTV",             Staff="120" },
+                    new { Name="ITC Hotels",          Industry="Hospitality",    Services="Manned Guarding",                   Staff="35" },
+                    new { Name="Tata Motors",         Industry="Manufacturing",  Services="ESS, Manned Guarding",              Staff="80" },
+                    new { Name="Infosys Ltd",         Industry="IT",             Services="Access Control, CCTV",              Staff="60" },
+                    new { Name="HDFC Bank",           Industry="Banking",        Services="Cash Services, ATM",                Staff="95" },
+                    new { Name="Cipla Ltd",           Industry="Pharma",         Services="ESS, Fire Systems",                 Staff="42" },
+                    new { Name="Big Bazaar",          Industry="Retail",         Services="Manned Guarding, Access Control",   Staff="75" },
+                    new { Name="Oberoi Hotels",       Industry="Hospitality",    Services="Manned Guarding, CCTV",             Staff="28" },
+                    new { Name="L&T Construction",    Industry="Infrastructure", Services="Manned Guarding, Perimeter",        Staff="110" }
+                })
+                {
+                    <tr>
+                        <td>@client.Name</td>
+                        <td>@client.Industry</td>
+                        <td>
+                            @foreach (var svc in client.Services.Split(','))
+                            {
+                                <span class="star-badge" style="margin-right:4px;">@svc.Trim()</span>
+                            }
+                        </td>
+                        <td>@client.Staff</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <p style="color:var(--muted); font-size:13px; margin-top:20px; text-align:center;">
+        Showing 10 of 250+ clients. Client data is managed by the Admin panel.
+    </p>
+</div>

@@ -1,0 +1,151 @@
+@{
+    ViewBag.Title = "Home";
+    ViewBag.ActivePage = "Home";
+}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">&#x1F6E1; ISO 9001:2000 Certified</div>
+
+        <h1>Total Security<br /><em>Solutions</em> Provider</h1>
+
+        <p>
+            Serving 250+ corporate clients across 24 states with manned guarding,
+            electronic security, cash services and more &mdash; since 2000.
+        </p>
+
+        <div class="hero-btns">
+            <a href="@Url.Action("Index", "Services")" class="btn-gold">Our Services</a>
+            <a href="@Url.Action("Index", "Contact")" class="btn-outline">Get in Touch</a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <div class="stat-num">2800+</div>
+                <div class="stat-label">Trained Personnel</div>
+            </div>
+            <div>
+                <div class="stat-num">250+</div>
+                <div class="stat-label">Corporate Clients</div>
+            </div>
+            <div>
+                <div class="stat-num">24</div>
+                <div class="stat-label">States Covered</div>
+            </div>
+            <div>
+                <div class="stat-num">25+</div>
+                <div class="stat-label">Years of Trust</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== SERVICES OVERVIEW ===== -->
+<div class="section-alt">
+    <div class="section-inner">
+        <p class="section-tag">What We Offer</p>
+
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; margin-bottom:48px;">
+            <h2 class="section-title" style="margin-bottom:0;">Our Core Services</h2>
+            <a href="@Url.Action("Index", "Services")" class="btn-outline" style="font-size:13px; padding:10px 24px;">
+                View All Services
+            </a>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#x1F6E1;</div>
+                <h3>Manned Guarding</h3>
+                <p>Professional guards, fire squads, dog squads and bodyguards for industries, banks, hotels and institutions.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="svc-icon">&#x1F4B0;</div>
+                <h3>Cash Services</h3>
+                <p>Secured cash transfer, ATM replenishment, vaulting, processing and multi-point collection services.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="svc-icon">&#x1F4F9;</div>
+                <h3>Electronic Security</h3>
+                <p>CCTV, access control, fire alarm, burglar alarms, and perimeter protection design &amp; maintenance.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="svc-icon">&#x1F465;</div>
+                <h3>Recruitment &amp; Training</h3>
+                <p>End-to-end manpower recruitment, training and deployment aligned with each division's requirements.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== WHY STAR ===== -->
+<div class="section-inner">
+    <p class="section-tag">Why Choose Us</p>
+    <h2 class="section-title">Built on Trust &amp; Excellence</h2>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            <div class="f-icon">&#x1F3C6;</div>
+            <h3>ISO Certified Quality</h3>
+            <p>ISO 9001:2000 certified public limited company with strict compliance to international security standards.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="f-icon">&#x1F4BC;</div>
+            <h3>100 Senior Managers</h3>
+            <p>Backed by 100 bonded managers delivering premium services with high quality and absolute integrity.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="f-icon">&#x1F310;</div>
+            <h3>Pan-Pakistan Presence</h3>
+            <p>Network spanning North, South, East and West regions across 24 states with rapid response capability.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===== TESTIMONIALS ===== -->
+<div class="section-alt">
+    <div class="section-inner">
+        <p class="section-tag">Client Stories</p>
+        <h2 class="section-title">What Our Clients Say</h2>
+
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-text">
+                    "Star Securities has been our trusted partner for over 8 years.
+                    Their manned guarding team is professional, disciplined and responsive."
+                </p>
+                <div class="testi-author">Imran Khan</div>
+                <div class="testi-role">Head of Security, IndusInd Bank</div>
+            </div>
+
+            <div class="testi-card">
+                <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-text">
+                    "The electronic security systems installed by Star have significantly improved
+                    our facility's safety. Excellent after-sales support too."
+                </p>
+                <div class="testi-author">Liaqat Baig</div>
+                <div class="testi-role">Facilities Manager, TechCorp India</div>
+            </div>
+
+            <div class="testi-card">
+                <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <p class="testi-text">
+                    "Reliable cash management services that gave us complete peace of mind.
+                    Their staff is well-trained and always punctual."
+                </p>
+                <div class="testi-author">Nawaz Sharif</div>
+                <div class="testi-role">Operations Director, Retail Chain Ltd</div>
+            </div>
+        </div>
+    </div>
+</div>
