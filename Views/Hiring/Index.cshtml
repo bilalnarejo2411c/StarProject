@@ -58,10 +58,6 @@
 
             @using (Html.BeginForm("Submit", "Hiring", FormMethod.Post))
             {
-                @Html.AntiForgeryToken()
-
-                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-
                 <div class="form-row">
                     <div class="form-group">
                         <label>First Name</label>
@@ -93,7 +89,7 @@
 
                 <div class="form-group">
                     <label>Phone Number</label>
-                    <input type="tel"
+                    <input type="number"
                            name="Phone"
                            value="@Model?.Phone" />
 

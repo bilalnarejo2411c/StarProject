@@ -7,23 +7,23 @@ namespace Star_Project.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "First Name is required")]
+        [Required]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Last Name is required")]
+        [Required]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Enter a valid email address")]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Phone Number is required")]
+        [Required]
         public string Phone { get; set; }
 
-        [Required(ErrorMessage = "Please select Education")]
+        [Required]
         public string Education { get; set; }
 
-        [Required(ErrorMessage = "Please select Profession")]
+        [Required]
         public string Profession { get; set; }
     }
 }
