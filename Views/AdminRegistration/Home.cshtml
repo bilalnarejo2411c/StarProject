@@ -1,0 +1,101 @@
+﻿@model Star_Project.Models.adminreg
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_AdminNav.cshtml";
+}
+<style>
+        body {
+        background: #f4f6f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    form {
+        width: 400px;
+        margin: 60px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #dcdcdc;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: 0.3s;
+        box-sizing: border-box;
+    }
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        outline: none;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.2);
+    }
+
+    .mb-3 {
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #0d6efd;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: #0b5ed7;
+        transform: translateY(-2px);
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (TempData["Success"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '@TempData["Success"]',
+            showConfirmButton: false,
+            timer: 2000
+        });
+    </script>
+}
+    <form method="post" action="/AdminRegistration/Home"autocomplete="off">
+
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Save
+        </button>
+
+    </form>
+}

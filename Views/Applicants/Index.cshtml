@@ -1,241 +1,151 @@
 ﻿@model IEnumerable<Star_Project.Models.Hiring>
 
 @{
-    ViewData["Title"] = "Hiring Applications";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminNav.cshtml";
 }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<h1>Index</h1>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Education)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profession)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Education)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profession)
+            </td>
+            <td>
+                <button asp-action="Delete" asp-route-id="@item.Id">delete</button> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <button asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
 <style>
-    * {
-        font-family: 'Poppins', sans-serif;
+    body {
+        background: #f4f6f9;
+        font-family: 'Segoe UI', sans-serif;
     }
 
-    .section-inner {
-        max-width: 1200px;
-        margin: auto;
-        padding: 35px 20px;
-    }
-
-    .section-tag {
-        color: #2563eb;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-        font-size: 13px;
-    }
-
-    .section-title {
-        font-size: 38px;
+    h1 {
+        color: #6f42c1;
+        margin-bottom: 20px;
         font-weight: 700;
-        color: #111827 !important;
-        margin-bottom: 12px;
     }
 
-    .section-sub {
-        color: #6b7280;
-        font-size: 15px;
-        margin-bottom: 35px;
-    }
-
-    .job-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        margin-bottom: 22px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,.08);
-        transition: all .3s ease;
-        border: 1px solid #f1f5f9;
-    }
-
-    .job-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 18px 45px rgba(0,0,0,.12);
-    }
-
-    .job-info {
-        flex: 1;
-    }
-
-    .job-info h3 {
-        color: #111827 !important;
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        letter-spacing: .3px;
-    }
-
-    .job-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .job-meta span {
-        background: #f8fafc;
-        border: 1px solid #e5e7eb;
-        color: #374151;
-        padding: 9px 14px;
-        border-radius: 30px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .action-buttons {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .btn-outline-sm {
+    p a {
+        display: inline-block;
+        text-decoration: none !important;
+        background: #6f42c1;
+        color: white !important;
         padding: 10px 18px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-        transition: .3s;
-    }
-
-    .btn-details {
-        border: 1px solid #2563eb;
-        color: #2563eb;
-    }
-
-    .btn-details:hover {
-        background: #2563eb;
-        color: #fff;
-    }
-
-    .btn-edit {
-        border: 1px solid #059669;
-        color: #059669;
-    }
-
-    .btn-edit:hover {
-        background: #059669;
-        color: #fff;
-    }
-
-    .btn-delete {
-        border: 1px solid #dc2626;
-        color: #dc2626;
-    }
-
-    .btn-delete:hover {
-        background: #dc2626;
-        color: #fff;
-    }
-
-    .empty-box {
-        background: #fff;
-        border-radius: 15px;
-        padding: 40px;
-        text-align: center;
-        color: #6b7280;
-        border: 1px dashed #cbd5e1;
-    }
-
-    .total-count {
-        margin-top: 25px;
-        text-align: center;
-        font-size: 15px;
-        color: #6b7280;
+        border-radius: 6px;
         font-weight: 500;
+        margin-bottom: 20px;
+        transition: 0.3s;
     }
 
-    @@media(max-width:768px) {
-
-        .job-card {
-            flex-direction: column;
-            align-items: flex-start;
+        p a:hover {
+            background: #5a32a3;
+            color: white !important;
         }
 
-        .action-buttons {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .section-title {
-            font-size: 28px;
-        }
-
-        .job-info h3 {
-            font-size: 20px;
-        }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
+
+        .table thead tr {
+            background: #f3e8ff !important;
+        }
+
+        .table thead th {
+            color: #6f42c1 !important;
+            background: #f3e8ff !important;
+            padding: 15px !important;
+            font-weight: 700 !important;
+            border-bottom: 2px solid #6f42c1 !important;
+        }
+
+        .table tbody td {
+            color: #6f42c1 !important;
+            padding: 14px !important;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background: #faf7ff;
+        }
+
+        .table tbody tr:hover {
+            background: #f0e6ff;
+        }
+
+        .table tbody a {
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+            .table tbody a:nth-child(1) {
+                color: #198754 !important;
+            }
+
+            .table tbody a:nth-child(2) {
+                color: #0d6efd !important;
+            }
+
+            .table tbody a:nth-child(3) {
+                color: #dc3545 !important;
+            }
+
+            .table tbody a:hover {
+                text-decoration: underline;
+            }
 </style>
-
-<div class="section-inner">
-
-    <p class="section-tag">
-        Applicants Details
-    </p>
-    <p class="section-sub">
-        Manage all candidate applications submitted through the careers page.
-    </p>
-
-    @if (Model != null && Model.Any())
-    {
-        @foreach (var item in Model)
-        {
-            <div class="job-card">
-
-                <div class="job-info">
-
-                    <h3>
-                        @item.FirstName @item.LastName
-                    </h3>
-
-                    <div class="job-meta">
-                        <span>📧 @item.Email</span>
-                        <span>📱 @item.Phone</span>
-                        <span>🎓 @item.Education</span>
-                        <span>💼 @item.Profession</span>
-                    </div>
-
-                </div>
-
-                <div class="action-buttons">
-
-                    <a asp-action="Details"
-                       asp-route-id="@item.Id"
-                       class="btn-outline-sm btn-details">
-                        Details
-                    </a>
-
-                    <a asp-action="Edit"
-                       asp-route-id="@item.Id"
-                       class="btn-outline-sm btn-edit">
-                        Edit
-                    </a>
-
-                    <a asp-action="Delete"
-                       asp-route-id="@item.Id"
-                       class="btn-outline-sm btn-delete">
-                        Delete
-                    </a>
-
-                </div>
-
-            </div>
-        }
-
-        <div class="total-count">
-            Total Applications Received: <strong>@Model.Count()</strong>
-        </div>
-    }
-    else
-    {
-        <div class="empty-box">
-            <h4>No Applications Found</h4>
-            <p>There are currently no job applications in the database.</p>
-        </div>
-    }
-
-</div>

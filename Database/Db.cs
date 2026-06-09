@@ -13,6 +13,7 @@ namespace Star_Project.Database
         // Tables
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Hiring> Hirings{ get; set; }
-        public DbSet<Star_Project.Models.AdminRegistration> AdminRegistration { get; set; } = default!;
+        public DbSet<Star_Project.Models.adminreg> adminreg { get; set; } = default!;
+        
     }
 }
