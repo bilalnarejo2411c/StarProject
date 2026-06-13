@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Star_Project.Database;
 
-namespace Star_Project.Controllers.User
+namespace Star_Project.Controllers.Admin
 {
     public class ApplicantsController : Controller
     {
@@ -18,15 +18,14 @@ namespace Star_Project.Controllers.User
 
         public IActionResult Delete(int id)
         {
-            var data = dc.Hirings.Find(id);
+            // adminreg table se find karein, Contacts se nahi
+            var data = dc.Hirings.Find(id);  // ← YEH CHANGE KIYA
 
-            if (data == null)
+            if (data != null)
             {
-                return NotFound();
+                dc.Hirings.Remove(data);      // ← YEH CHANGE KIYA
+                dc.SaveChanges();
             }
-
-            dc.Hirings.Remove(data);
-            dc.SaveChanges();
 
             return RedirectToAction("Index");
         }

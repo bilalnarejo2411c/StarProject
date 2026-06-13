@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+
+    .custom-navbar {
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        padding: 15px 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .user-info {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .login-btn,
+    .logout-btn {
+        text-decoration: none;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .login-btn {
+        background: #2563eb;
+        color: white;
+    }
+
+    .logout-btn {
+        background: #dc2626;
+        color: white;
+    }
+
+        .login-btn:hover,
+        .logout-btn:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+</style>
+
+<div class="custom-navbar">
+    <div class="navbar-content">
+
+        @if (Context.Session.GetString("email") != null)
+        {
+            <span class="user-info">
+                Welcome, @Context.Session.GetString("email")
+            </span>
+
+            <a href="@Url.Action("Logout", "Account")"
+               class="logout-btn">
+                Logout
+            </a>
+        }
+        else
+        {
+            <div></div>
+
+            <a href="@Url.Action("Login", "Account")"
+               class="login-btn">
+                Employee/Admin Login
+            </a>
+        }
+
+    </div>
+</div>

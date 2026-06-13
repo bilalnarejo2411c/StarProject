@@ -59,14 +59,15 @@
                 @Html.DisplayFor(modelItem => item.Message)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <form asp-action="Delete">
-                        <input type="hidden" asp-for="Id" />
-                        <button type="submit" class="btn btn-danger">
-                            Delete
-                        </button>
-                    </form>
+
+
+                    <a href="@Url.Action("Delete", "AdminWork", new { id = item.Id })"
+                       onclick="return confirm('Delete @item.FirstName @item.LastName ?');"
+                       style="cursor:pointer; color:#dc3545;">
+                        Delete
+                    </a>
+
+                       
             </td>
         </tr>
 }
@@ -157,4 +158,7 @@
             .table tbody a:hover {
                 text-decoration: underline;
             }
+        .table tbody a {
+            cursor: pointer !important;
+        }
 </style>

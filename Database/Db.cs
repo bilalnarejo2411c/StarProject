@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Star_Project.Controllers.Admin;
 using Star_Project.Models;
 
 namespace Star_Project.Database
@@ -14,6 +15,7 @@ namespace Star_Project.Database
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Hiring> Hirings{ get; set; }
         public DbSet<Star_Project.Models.adminreg> adminreg { get; set; } = default!;
-        
+        public DbSet<AdminVaccanies> Vacancies { get; set;}
+
     }
 }

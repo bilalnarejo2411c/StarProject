@@ -3,10 +3,10 @@ using Star_Project.Database;
 
 namespace Star_Project.Controllers.Admin
 {
-    public class AdminWork : Controller
+    public class AdminWorkController : Controller
     {
         Db dt;
-        public AdminWork(Db dt)
+        public AdminWorkController(Db dt)
         {
             this.dt = dt;
         }
@@ -15,14 +15,17 @@ namespace Star_Project.Controllers.Admin
             var data = dt.Contacts.ToList();
             return View(data);
         }
-        public IActionResult Delete(int id) {
-            var data = dt.Contacts.Find(id);
+        public IActionResult Delete(int id)
+        {
+            // adminreg table se find karein, Contacts se nahi
+            var data = dt.Contacts.Find(id);  // ← YEH CHANGE KIYA
 
             if (data != null)
             {
-                dt.Contacts.Remove(data);
-                dt.SaveChanges();    
+                dt.Contacts.Remove(data);      // ← YEH CHANGE KIYA
+                dt.SaveChanges();
             }
+
             return RedirectToAction("Index");
         }
     }

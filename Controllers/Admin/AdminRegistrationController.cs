@@ -40,6 +40,7 @@ namespace Star_Project.Controllers.Admin
 
             return View(a);
         }
+        
 
         private void SendLoginEmail(string email, string name, string password)
         {

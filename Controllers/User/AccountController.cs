@@ -1,4 +1,5 @@
 ﻿using MailKit.Security;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using Star_Project.Database;
@@ -32,6 +33,7 @@ namespace Star_Project.Controllers.User
 
             if (data == null)
             {
+                
                 ViewBag.Error = "Incorrect Email or Password";
                 return View();
             }
@@ -43,6 +45,9 @@ namespace Star_Project.Controllers.User
 
             if (data.UserRole == "user")
             {
+                HttpContext.Session.SetString("email", data.email);
+
+
                 SendLoginEmail(data.email, data.name);
 
                 return RedirectToAction("Index", "Employe");
@@ -51,6 +56,7 @@ namespace Star_Project.Controllers.User
             ViewBag.Error = "Invalid User Role";
             return View();
         }
+       
 
         private void SendLoginEmail(string email, string name)
         {
@@ -115,6 +121,11 @@ namespace Star_Project.Controllers.User
             {
                 Console.WriteLine("Email Error: " + ex.Message);
             }
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
         }
     }
 }

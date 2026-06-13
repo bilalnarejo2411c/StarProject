@@ -1,35 +1,25 @@
-﻿@model IEnumerable<Star_Project.Models.Hiring>
+﻿@model IEnumerable<Star_Project.Models.adminreg>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminNav.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1>Currently avalible employe</h1>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Education)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Profession)
+                @Html.DisplayNameFor(model => model.UserRole)
             </th>
             <th></th>
         </tr>
@@ -38,28 +28,28 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.password)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Phone)
+                @Html.DisplayFor(modelItem => item.UserRole)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Education)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profession)
-            </td>
-            <td>
-                <button asp-action="Delete" asp-route-id="@item.Id">delete</button> |
+                    <a href="@Url.Action("Edit", "AdminEmploye", new { id = item.Id })"
+                       onclick="return confirm('Edit @item.name ?');"
+                       style="cursor:pointer; color:#dc3545;">
+                        Edit
+                    </a>
+                    |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a href="@Url.Action("Delete", "Applicants", new { id = item.Id })"
-                       onclick="return confirm('Delete @item.FirstName @item.LastName ?');"
+                    <!-- Delete link ke liye confirmation add karein -->
+                    <a href="@Url.Action("Delete", "AdminEmploye", new { id = item.Id })"
+                       onclick="return confirm('Delete @item.name ?');"
                        style="cursor:pointer; color:#dc3545;">
                         Delete
                     </a>
@@ -69,7 +59,7 @@
     </tbody>
 </table>
 <style>
-    body {
+ body {
         background: #f4f6f9;
         font-family: 'Segoe UI', sans-serif;
     }
@@ -153,3 +143,4 @@
                 text-decoration: underline;
             }
 </style>
+
