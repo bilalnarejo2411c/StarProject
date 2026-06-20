@@ -4,7 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Star_Project</RootNamespace>
+	  <RootNamespace>Star_Project</RootNamespace>
+	  <AssemblyName>Star_Project</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

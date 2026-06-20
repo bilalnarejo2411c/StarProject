@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Star_Project.Models.AdminVaccanies>
+
+@{
+    ViewData["Title"] = "Vacancies";
+    Layout = "~/Views/Shared/_AdminNav.cshtml";
+}
+<div>
+    <div class="job-info" style="width:100%; flex:1;">
+
+        <form asp-action="Create" method="post" style="width:100%;">
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Vacancy Name</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Location" class="form-label">Location</label>
+                <input asp-for="Location" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Age" class="form-label">Age</label>
+                <input asp-for="Age" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="City" class="form-label">City</label>
+                <input asp-for="City" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Postiton" class="form-label">Position</label>
+                <input asp-for="Postiton" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Criteria" class="form-label">Criteria</label>
+                <textarea asp-for="Criteria" class="form-control" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn-outline-sm">
+                Create Vacancy
+            </button>
+
+        </form>
+
+    </div>
+</div>

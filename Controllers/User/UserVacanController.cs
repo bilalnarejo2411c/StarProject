@@ -1,21 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Star_Project.Database;
 
 namespace Star_Project.Controllers.User
 {
-    public class CareersController : Controller
+    public class UserVacanController : Controller
     {
         Db dt;
-        public CareersController(Db dt)
+        public UserVacanController(Db dt)
         {
-            this.dt = dt;   
+            this.dt = dt;
         }
-       
-        [HttpGet]
         public IActionResult Index()
         {
-            var data = dt.Vacancies.ToList();
-            return View(data);
+            return View();
         }
         
     }

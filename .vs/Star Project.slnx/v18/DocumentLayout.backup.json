@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\StarProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|c:\\users\\admin\\source\\repos\\starproject\\controllers\\admin\\adminemployecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|solutionrelative:controllers\\admin\\adminemployecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|c:\\users\\admin\\source\\repos\\starproject\\views\\adminemploye\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|solutionrelative:views\\adminemploye\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|c:\\users\\admin\\source\\repos\\starproject\\views\\adminemploye\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|solutionrelative:views\\adminemploye\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|c:\\users\\admin\\source\\repos\\starproject\\views\\employe\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|solutionrelative:views\\employe\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|c:\\users\\admin\\source\\repos\\starproject\\controllers\\admin\\adminregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|solutionrelative:controllers\\admin\\adminregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|c:\\users\\admin\\source\\repos\\starproject\\views\\employe\\myapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{943F6FC5-0408-52A8-F167-0D10E94F8422}|Star Project.csproj|solutionrelative:views\\employe\\myapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,67 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\AdminEmploye\\edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\AdminEmploye\\edit.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\AdminEmploye\\edit.cshtml",
-              "RelativeToolTip": "Views\\AdminEmploye\\edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-13T06:27:17.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminEmployeController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\StarProject\\Controllers\\Admin\\AdminEmployeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminEmployeController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Controllers\\Admin\\AdminEmployeController.cs*",
-              "RelativeToolTip": "Controllers\\Admin\\AdminEmployeController.cs*",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwEYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T06:19:44.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\AdminEmploye\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\AdminEmploye\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\AdminEmploye\\Index.cshtml",
-              "RelativeToolTip": "Views\\AdminEmploye\\Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-13T06:18:54.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdminRegistrationController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\StarProject\\Controllers\\Admin\\AdminRegistrationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminRegistrationController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Controllers\\Admin\\AdminRegistrationController.cs",
-              "RelativeToolTip": "Controllers\\Admin\\AdminRegistrationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T06:16:21.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\Employe\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Employe\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\Employe\\Index.cshtml",
-              "RelativeToolTip": "Views\\Employe\\Index.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\Employe\\Index.cshtml*",
+              "RelativeToolTip": "Views\\Employe\\Index.cshtml*",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-13T05:33:53.18Z",
+              "WhenOpened": "2026-06-20T06:38:18.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyApplications.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\Employe\\MyApplications.cshtml",
+              "RelativeDocumentMoniker": "Views\\Employe\\MyApplications.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\Employe\\MyApplications.cshtml",
+              "RelativeToolTip": "Views\\Employe\\MyApplications.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-20T06:37:05.238Z",
               "EditorCaption": ""
             }
           ]

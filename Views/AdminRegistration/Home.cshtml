@@ -1,101 +1,158 @@
 ﻿@model Star_Project.Models.adminreg
+
 @{
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_AdminNav.cshtml";
 }
-<style>
-        body {
-        background: #f4f6f9;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
 
-    form {
-        width: 400px;
-        margin: 60px auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #333;
-    }
-
-    .form-control {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #dcdcdc;
-        border-radius: 8px;
-        font-size: 15px;
-        transition: 0.3s;
-        box-sizing: border-box;
-    }
-
-    .form-control:focus {
-        border-color: #0d6efd;
-        outline: none;
-        box-shadow: 0 0 8px rgba(13, 110, 253, 0.2);
-    }
-
-    .mb-3 {
-        margin-bottom: 20px;
-    }
-
-    .btn-primary {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 8px;
-        background: #0d6efd;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .btn-primary:hover {
-        background: #0b5ed7;
-        transform: translateY(-2px);
-    }
-</style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (TempData["Success"] != null)
 {
     <script>
-        Swal.fire({
-            icon: 'success',
-            title: '@TempData["Success"]',
-            showConfirmButton: false,
-            timer: 2000
-        });
-    </script>
+          Swal.fire({
+          icon: 'success',
+          title: '@TempData["Success"]',
+          showConfirmButton: false,
+          timer: 2000
+          }); </script>
 }
-    <form method="post" action="/AdminRegistration/Home"autocomplete="off">
 
-        <div class="mb-3">
-            <label>Name</label>
-            <input type="text" name="name" class="form-control" />
-        </div>
+<div class="login-page">
 
-        <div class="mb-3">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" />
-        </div>
+    ```
+    <div class="login-card">
+        <div class="login-icon">👤</div>
 
-        <div class="mb-3">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" />
-        </div>
+        <h2>Create Employee</h2>
 
-        <button type="submit" class="btn btn-primary">
-            Save
-        </button>
+        <p class="login-sub">
+            Add a new employee account to the system.
+        </p>
 
-    </form>
-}
+        <form method="post" action="/AdminRegistration/Home" autocomplete="off">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn-gold w-100">
+                Save Employee
+            </button>
+
+        </form>
+    </div>
+    ```
+
+</div>
+
+<style>
+
+    .login-page {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 500px;
+        background: var(--dark2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .login-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .login-card h2 {
+        font-family: 'Playfair Display', serif;
+        color: var(--gold);
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .login-sub {
+        color: var(--muted);
+        margin-bottom: 30px;
+        font-size: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+    .form-control {
+        width: 100%;
+        background: var(--dark3);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        color: var(--text);
+        font-size: 14px;
+        outline: none;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+        }
+
+    .btn-gold {
+        width: 100%;
+        background: var(--gold);
+        color: var(--dark);
+        border: none;
+        padding: 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .btn-gold:hover {
+            opacity: .9;
+        }
+
+    @@media(max-width:768px) {
+
+        .login-card {
+            padding: 25px;
+        }
+
+            .login-card h2 {
+                font-size: 26px;
+            }
+    }
+
+</style>

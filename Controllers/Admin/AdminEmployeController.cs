@@ -37,42 +37,7 @@ namespace Star_Project.Controllers.Admin
             return RedirectToAction("Index");
         }
 
-        public IActionResult Edit(int id)
-        {
-            var data = dt.adminreg.Find(id);
-
-            if (data == null)
-            {
-                return NotFound();
-            }
-
-            return View(data);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(adminreg obj)
-        {
-            if (ModelState.IsValid)
-            {
-                dt.adminreg.Update(obj);
-                dt.SaveChanges();
-
-                // Password reset email send
-                SendLoginEmail(
-                    obj.email,
-                    obj.name,
-                    obj.password
-                );
-
-                TempData["Success"] =
-                    "Employee account updated successfully and email sent.";
-
-                return View();
-            }
-
-            return View(obj);
-        }
+       
 
         private void SendLoginEmail(string email, string name, string password)
         {

@@ -5,7 +5,7 @@
 namespace Star_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class rehman : Migration
+    public partial class add : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,8 @@ namespace Star_Project.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Service = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,6 +63,24 @@ namespace Star_Project.Migrations
                 {
                     table.PrimaryKey("PK_Hirings", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Vacancies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Age = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Postiton = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Criteria = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vacancies", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -75,6 +94,9 @@ namespace Star_Project.Migrations
 
             migrationBuilder.DropTable(
                 name: "Hirings");
+
+            migrationBuilder.DropTable(
+                name: "Vacancies");
         }
     }
 }

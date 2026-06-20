@@ -1,155 +1,208 @@
 ﻿@model IEnumerable<Star_Project.Models.Hiring>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Applicants";
     Layout = "~/Views/Shared/_AdminNav.cshtml";
 }
 
-<h1>Index</h1>
+<div class="table-container">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Education)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Profession)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Education)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Profession)
-            </td>
-            <td>
-                <button asp-action="Delete" asp-route-id="@item.Id">delete</button> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a href="@Url.Action("Delete", "Applicants", new { id = item.Id })"
-                       onclick="return confirm('Delete @item.FirstName @item.LastName ?');"
-                       style="cursor:pointer; color:#dc3545;">
-                        Delete
-                    </a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    ```
+    <div class="page-header">
+        <h1>Job Applicants</h1>
+
+        <a asp-action="Create" class="btn-gold">
+            Create New
+        </a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Phone)</th>
+                <th>@Html.DisplayNameFor(model => model.Education)</th>
+                <th>@Html.DisplayNameFor(model => model.Profession)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Education)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Profession)</td>
+
+                    <td class="action-cell">
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.Id"
+                           class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="@Url.Action("Delete", "Applicants", new { id = item.Id })"
+                           onclick="return confirm('Delete @item.FirstName @item.LastName ?');"
+                           class="delete-btn">
+                            Delete
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    ```
+
+</div>
+
 <style>
-    body {
-        background: #f4f6f9;
-        font-family: 'Segoe UI', sans-serif;
+
+    .table-container {
+        background: var(--dark2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 25px;
+        margin: 25px;
+        overflow: hidden;
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     h1 {
-        color: #6f42c1;
-        margin-bottom: 20px;
-        font-weight: 700;
+        font-family: 'Playfair Display', serif;
+        color: var(--gold);
+        font-size: 38px;
+        margin: 0;
     }
 
-    p a {
-        display: inline-block;
-        text-decoration: none !important;
-        background: #6f42c1;
-        color: white !important;
-        padding: 10px 18px;
-        border-radius: 6px;
-        font-weight: 500;
-        margin-bottom: 20px;
+    .btn-gold {
+        background: var(--gold);
+        color: var(--dark);
+        text-decoration: none;
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
         transition: 0.3s;
     }
 
-        p a:hover {
-            background: #5a32a3;
-            color: white !important;
+        .btn-gold:hover {
+            opacity: .9;
+            color: var(--dark);
         }
 
     .table {
         width: 100%;
         border-collapse: collapse;
-        background: #fff;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        background: transparent;
     }
 
-        .table thead tr {
-            background: #f3e8ff !important;
+        .table thead {
+            background: var(--dark3);
         }
 
-        .table thead th {
-            color: #6f42c1 !important;
-            background: #f3e8ff !important;
-            padding: 15px !important;
-            font-weight: 700 !important;
-            border-bottom: 2px solid #6f42c1 !important;
-        }
+            .table thead th {
+                padding: 18px;
+                color: var(--gold);
+                font-family: 'Playfair Display', serif;
+                border-bottom: 1px solid var(--border);
+                text-align: left;
+                font-size: 15px;
+            }
 
         .table tbody td {
-            color: #6f42c1 !important;
-            padding: 14px !important;
-            border-bottom: 1px solid #ddd;
+            padding: 16px 18px;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
             vertical-align: middle;
         }
 
-        .table tbody tr:nth-child(even) {
-            background: #faf7ff;
+        .table tbody tr {
+            transition: .3s;
         }
 
-        .table tbody tr:hover {
-            background: #f0e6ff;
+            .table tbody tr:hover {
+                background: rgba(201,168,76,.08);
+            }
+
+            .table tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+    .action-cell {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .details-btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        border: 1px solid #0d6efd;
+        color: #0d6efd !important;
+        font-size: 13px;
+        font-weight: 500;
+        transition: .3s;
+    }
+
+        .details-btn:hover {
+            background: #0d6efd;
+            color: white !important;
         }
 
-        .table tbody a {
-            text-decoration: none;
-            font-weight: 600;
-            margin-right: 5px;
+    .delete-btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        border: 1px solid #dc3545;
+        color: #dc3545 !important;
+        font-size: 13px;
+        font-weight: 500;
+        transition: .3s;
+    }
+
+        .delete-btn:hover {
+            background: #dc3545;
+            color: white !important;
         }
 
-            .table tbody a:nth-child(1) {
-                color: #198754 !important;
-            }
+    @@media(max-width:768px) {
 
-            .table tbody a:nth-child(2) {
-                color: #0d6efd !important;
-            }
+        .table-container {
+            margin: 15px;
+            padding: 15px;
+        }
 
-            .table tbody a:nth-child(3) {
-                color: #dc3545 !important;
-            }
+        h1 {
+            font-size: 28px;
+        }
 
-            .table tbody a:hover {
-                text-decoration: underline;
-            }
+        .table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
 </style>

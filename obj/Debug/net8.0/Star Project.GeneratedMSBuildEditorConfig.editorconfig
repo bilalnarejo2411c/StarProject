@@ -50,12 +50,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5SZWdpc3RyYXRpb25cSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/repos/StarProject/Views/AdminVacancies/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WYWNhbmNpZXNcSW5kZXguY3NodG1s
+[C:/Users/Admin/source/repos/StarProject/Views/AdminVacan/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WYWNhblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/repos/StarProject/Views/AdminWork/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Xb3JrXEluZGV4LmNzaHRtbA==
+[C:/Users/Admin/source/repos/StarProject/Views/AdminVacan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WYWNhblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/source/repos/StarProject/Views/Admin/Home.cshtml]
@@ -84,6 +84,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/source/repos/StarProject/Views/Employe/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/source/repos/StarProject/Views/Employe/MyApplications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZVxNeUFwcGxpY2F0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/source/repos/StarProject/Views/Forget/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9yZ2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/source/repos/StarProject/Views/Hiring/Index.cshtml]

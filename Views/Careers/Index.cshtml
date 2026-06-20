@@ -1,3 +1,5 @@
+@model IEnumerable<Star_Project.Models.AdminVaccanies>
+
 @{
     ViewBag.Title = "Careers";
     ViewBag.ActivePage = "Careers";
@@ -6,65 +8,45 @@
 <div class="section-inner">
     <p class="section-tag">Join Our Team</p>
     <h2 class="section-title">Current Openings</h2>
-    <p class="section-sub">Be part of India's trusted security force. We hire, train and grow talent.</p>
+    <p class="section-sub">
+        Be part of our trusted security force. We hire, train and grow talent.
+    </p>
 
-    @foreach (var job in new[] {
-        new {
-            Title    = "Security Supervisor",
-            Desc     = "Oversee a team of guards at a corporate client facility. Prior experience in armed forces/police preferred.",
-            Location = "Delhi NCR",
-            Type     = "Full Time",
-            Edu      = "12th Pass",
-            Salary   = "₹18,000–22,000/mo"
-        },
-        new {
-            Title    = "CCTV Technician",
-            Desc     = "Install and maintain CCTV and access control systems at client sites across the city.",
-            Location = "Mumbai",
-            Type     = "Full Time",
-            Edu      = "ITI / Diploma",
-            Salary   = "₹20,000–28,000/mo"
-        },
-        new {
-            Title    = "Cash Van Guard",
-            Desc     = "Accompany cash transit vehicles and ensure secure delivery. Must hold valid armed license.",
-            Location = "Bangalore",
-            Type     = "Full Time",
-            Edu      = "10th Pass",
-            Salary   = "₹15,000–19,000/mo"
-        },
-        new {
-            Title    = "HR & Recruitment Executive",
-            Desc     = "Manage end-to-end recruitment for field staff. Experience in bulk hiring preferred.",
-            Location = "Hyderabad",
-            Type     = "Full Time",
-            Edu      = "Graduate",
-            Salary   = "₹22,000–30,000/mo"
-        },
-        new {
-            Title    = "Security Trainer",
-            Desc     = "Conduct induction and refresher training for security personnel at our Training Academy.",
-            Location = "Chennai",
-            Type     = "Full Time",
-            Edu      = "Graduate + Ex-Forces",
-            Salary   = "₹25,000–35,000/mo"
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var job in Model)
+        {
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>@job.Name</h3>
+
+                    <p>@job.Criteria</p>
+
+                    <div class="job-meta">
+                        <span>&#x1F4CD; @job.Location</span>
+                        <span>&#x1F4BC; @job.Postiton</span>
+                        <span>&#x1F393; @job.Age</span>
+                        <span>&#x1F3D9; @job.City</span>
+                    </div>
+                </div>
+
+                <a href="@Url.Action("Apply", "Careers", new { id = job.Id })"
+                   class="btn-outline-sm">
+                    Apply Now
+                </a>
+            </div>
         }
-    })
+    }
+    else
     {
         <div class="job-card">
             <div class="job-info">
-                <h3>@job.Title</h3>
-                <p>@job.Desc</p>
-                <div class="job-meta">
-                    <span>&#x1F4CD; @job.Location</span>
-                    <span>&#x1F4BC; @job.Type</span>
-                    <span>&#x1F393; @job.Edu</span>
-                    <span>&#x1F4B0; @job.Salary</span>
-                </div>
+                <h3>No Vacancies Available</h3>
+                <p>
+                    There are currently no open positions.
+                    Please check back later.
+                </p>
             </div>
-            <a href="@Url.Action("Apply", "Careers", new { title = job.Title })" class="btn-outline-sm">
-                Apply Now
-            </a>
         </div>
     }
 

@@ -7502,7 +7502,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\StarProject\\Star Project.csproj",
-      "projectName": "Star Project",
+      "projectName": "Star_Project",
       "projectPath": "C:\\Users\\Admin\\source\\repos\\StarProject\\Star Project.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\source\\repos\\StarProject\\obj\\",

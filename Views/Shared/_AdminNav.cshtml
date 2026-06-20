@@ -13,7 +13,51 @@
         <link href="~/css/star.css" rel="stylesheet" />
         <link href="~/Content/css/star.css" rel="stylesheet" />
 
+        <!-- Loader Start -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+        <!-- Loader End -->
+
         <style>
+            #loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999999;
+            }
+
+            .spinner {
+                width: 70px;
+                height: 70px;
+                border: 8px solid #e9e9e9;
+                border-top: 8px solid #6f42c1;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+
+            @@keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .hide-loader {
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.5s ease;
+            }
+
             * {
                 margin: 0;
                 padding: 0;
@@ -293,14 +337,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="@Url.Action("Index", "AdminWork")"
-                           class="@(ViewBag.ActivePage == "AdminWork" ? "active" : "")">
-                            <i class="ti ti-message-report"></i>
-                            Users Contact Us
-                            <span class="admin-active-dot"></span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="@Url.Action("Index", "AdminEmploye")"
                            class="@(ViewBag.ActivePage == "AdminEmploye" ? "active" : "")">
                             <i class="ti ti-id-badge"></i>
@@ -309,8 +345,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="@Url.Action("Index", "AdminVacancies")"
-                           class="@(ViewBag.ActivePage == "AdminVacancies" ? "active" : "")">
+                        <a href="@Url.Action("Index", "AdminVacan")"
+                           class="@(ViewBag.ActivePage == "AdminVacan" ? "active" : "")">
                             <i class="ti ti-briefcase"></i>
                             Vacancies
                             <span class="admin-active-dot"></span>
@@ -343,7 +379,7 @@
 
                 <div class="admin-nav-divider"></div>
 
-                <a href="@Url.Action("Logout", "AdminData")" class="admin-logout-btn">
+                <a href="@Url.Action("Logout", "Admin")" class="admin-logout-btn">
                     <i class="ti ti-logout"></i>
                     Logout
                 </a>
@@ -359,7 +395,13 @@
         <script src="~/Scripts/jquery"></script>
         <script src="~/Scripts/"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            window.addEventListener("load", function () {
+                document.getElementById("loader").classList.add("hide-loader");
+            });
+        </script>
         @RenderSection("scripts", required: false)
+
 
     </body>
     </html>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Star_Project.Models.AdminVaccanies>
+
+@{
+    ViewData["Title"] = "Vacancies";
+    Layout = "~/Views/Shared/_AdminNav.cshtml";
+}
+
+<div class="section-inner">
+
+    <p class="section-tag">Admin Panel</p>
+    <h2 class="section-title">Vacancies Management</h2>
+    <p class="section-sub">
+        Manage all job vacancies from one place.
+    </p>
+
+    <p style="margin-bottom:25px;">
+        <a href="@Url.Action("Create", "AdminVacan")"
+           class="btn-outline-sm">
+            Create Vacancy
+        </a>
+    </p>
+
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var item in Model)
+        {
+            <div class="job-card">
+
+                <div class="job-info">
+
+                    <h3>@item.Name</h3>
+
+                    <p>@item.Criteria</p>
+
+                    <div class="job-meta">
+                        <span>📍 @item.Location</span>
+                        <span>🏙️ @item.City</span>
+                        <span>🎓 @item.Age</span>
+                        <span>💼 @item.Postiton</span>
+                    </div>
+
+                </div>
+
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Id"
+                       class="btn-outline-sm">
+                        Edit
+                    </a>
+
+                    <a asp-action="Details"
+                       asp-route-id="@item.Id"
+                       class="btn-outline-sm">
+                        Details
+                    </a>
+
+                    <a asp-action="Delete"
+                    asp-controller="Careers"   asp-route-id="@item.Id"
+                       class="btn-outline-sm">
+                        Delete
+                    </a>
+
+                </div>
+
+            </div>
+        }
+    }
+    else
+    {
+        <div class="job-card">
+            <div class="job-info">
+                <h3>No Vacancies Found</h3>
+                <p>No vacancy has been created yet.</p>
+            </div>
+        </div>
+    }
+
+</div>

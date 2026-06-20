@@ -10,6 +10,11 @@ namespace Star_Project.Controllers.Admin
         {
             return View();
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login" , "Account");
+        }
 
     }
 }

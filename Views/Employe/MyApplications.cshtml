@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Star_Project.Models.Contact>
+
+@{
+ViewData["Title"] = "Employee Work";
+Layout = "~/Views/Employe/Index.cshtml";
+}
+
+<style>
+
+body{
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.table-container{
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    margin: 25px;
+    overflow:hidden;
+}
+
+.page-header h1{
+    font-family: 'Playfair Display', serif !important;
+    color: var(--gold) !important;
+    font-size: 40px;
+    margin:0;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    background:transparent;
+}
+
+.table thead{
+    background:var(--dark3);
+}
+
+.table thead th{
+    font-family:'Playfair Display', serif !important;
+    color:var(--gold) !important;
+    padding:18px;
+    border-bottom:1px solid var(--border);
+    font-size:15px;
+}
+
+.table tbody td{
+    color:var(--text) !important;
+    padding:16px;
+    border-bottom:1px solid var(--border);
+    font-family:'DM Sans', sans-serif;
+}
+
+.table tbody tr:hover{
+    background:rgba(201,168,76,.08);
+}
+
+.accept-btn{
+    padding:8px 16px;
+    border-radius:8px;
+    border:1px solid #198754;
+    color:#198754 !important;
+    text-decoration:none;
+    font-size:13px;
+    font-family:'DM Sans', sans-serif;
+}
+
+.accept-btn:hover{
+    background:#198754;
+    color:#fff !important;
+}
+
+.delete-btn{
+    padding:8px 16px;
+    border-radius:8px;
+    border:1px solid #dc3545;
+    color:#dc3545 !important;
+    text-decoration:none;
+    font-size:13px;
+    font-family:'DM Sans', sans-serif;
+}
+
+.delete-btn:hover{
+    background:#dc3545;
+    color:#fff !important;
+}
+
+</style>
+
+<div class="table-container">
+
+<div class="page-header">
+    <h1>Employee Work</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Company)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+            <th>@Html.DisplayNameFor(model => model.Service)</th>
+            <th>@Html.DisplayNameFor(model => model.Message)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Company)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                <td>@Html.DisplayFor(modelItem => item.Service)</td>
+                <td>@Html.DisplayFor(modelItem => item.Message)</td>
+
+                <td class="action-cell">
+
+                    <a href="@Url.Action("Accepted", "Employe", new { id = item.Id })"
+                       class="accept-btn">
+                        Accepted
+                    </a>
+
+                    <a href="@Url.Action("Delete", "Employe", new { id = item.Id })"
+                       onclick="return confirm('Delete @item.FirstName @item.LastName ?');"
+                       class="delete-btn">
+                        Delete
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+```
+
+</div>
+

@@ -15,10 +15,9 @@
     <link href="~/Content/css/star.css" rel="stylesheet" />
 
     @RenderSection("styles", required: false)
-</head>
-<body>
-
-    <!-- ===== NAVBAR ===== -->
+    </head>
+    <body>
+        <!-- ===== NAVBAR ===== -->
     <nav class="navbar-star">
         <a href="@Url.Action("Index", "Home")" class="navbar-logo">
             &#9733; STAR
@@ -66,13 +65,6 @@
                 <a href="@Url.Action("Index", "Contact")"
                    class="@(ViewBag.ActivePage == "Contact" ? "active" : "")">
                    Contact Us
-                </a>
-
-            </li>
-            <li>
-                <a href="@Url.Action("Sitemap", "Home")"
-                   class="@(ViewBag.ActivePage == "Home" ? "active" : "")">
-                    Navigation
                 </a>
 
             </li>
@@ -141,6 +133,6 @@
     <script src="~/Scripts/"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @RenderSection("scripts", required: false)
-
+ 
 </body>
 </html>
