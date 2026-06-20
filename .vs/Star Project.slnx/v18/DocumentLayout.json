@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Views\\Employe\\Index.cshtml",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\StarProject\\Views\\Employe\\Index.cshtml",
               "RelativeToolTip": "Views\\Employe\\Index.cshtml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwEAAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-20T06:38:18.069Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Views\\Employe\\MyApplications.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-20T06:37:05.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T06:37:05.238Z"
             }
           ]
         }
